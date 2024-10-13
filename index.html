@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parakai Springs Advertisement</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6NYaA1e2Cj0sI6eG0mD3GfVJ3w0KFGpGxw+zXMQGfF3a8oT9w1VZ0mHJZ7+Kc9B3U+9R2h68cQwPqZ4K/C7uA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="assets/banner.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Banner PDF</a></li>
+            <li><a href="assets/sidebar.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Sidebar PDF</a></li>
+            <li><a href="assets/Doc1.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Wireframe PDF</a></li>
+            <li><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner Advertisement -->
+    <div class="banner">
+        <div class="banner-images">
+            <img src="Assets/banner1.jpg.jpg" alt="Beautiful Scenery 1" class="image slideInFromLeft active">
+            <img src="Assets/banner2.jpg.jpg" alt="Beautiful Scenery 2" class="image slideInFromLeft">
+        </div>
+        <div class="scene scene1">
+            <div class="text frame1">Experience Scenic Plus</div>
+        </div>
+        <div class="scene scene2">
+            <div class="text frame2">Feast of Scenery</div>
+        </div>
+    </div>
+
+    <!-- Main Content: Form and Sidebar -->
+    <div class="main-content">
+        <!-- Ticket Booking System -->
+        <div class="booking-form">
+            <!-- Step 1: Attendance Details -->
+            <div class="step active" id="step1">
+                <h2>Step 1: Attendance Details</h2>
+                <label for="date">Date of Attendance:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="adults">Adults:</label>
+                <input type="number" id="adults" name="adults" min="0" required>
+
+                <label for="children">Children:</label>
+                <input type="number" id="children" name="children" min="0" required>
+
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 2: Contact Information -->
+            <div class="step" id="step2">
+                <h2>Step 2: Contact Information</h2>
+                <label for="name">Contact Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button class="prev-btn">Previous</button>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 3: Ticket Options -->
+            <div class="step" id="step3">
+                <h2>Step 3: Ticket Options</h2>
+                <label for="color">Ticket Color:</label>
+                <input type="color" id="color" name="color" value="#ff0000">
+
+                <label>Optional Storage Locker:</label>
+                <div class="radio-group">
+                    <input type="radio" id="locker-yes" name="locker" value="Yes">
+                    <label for="locker-yes">Yes</label>
+
+                    <input type="radio" id="locker-no" name="locker" value="No" checked>
+                    <label for="locker-no">No</label>
+                </div>
+
+                <button class="prev-btn">Previous</button>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 4: Terms & Conditions -->
+            <div class="step" id="step4">
+                <h2>Step 4: Terms & Conditions</h2>
+                <label for="terms">
+                    <input type="checkbox" id="terms" name="terms" required> I have read and agree to the terms and conditions
+                </label>
+
+                <button class="prev-btn">Previous</button>
+                <button class="submit-btn">Submit</button>
+            </div>
+
+            <!-- Summary -->
+            <div class="summary" id="summary">
+                <h2>Booking Summary</h2>
+                <p id="summary-content"></p>
+                <button class="reset-btn">Reset</button>
+            </div>
+        </div>
+
+        <!-- Sidebar Advertisement -->
+        <aside class="sidebar-ad">
+            <div class="static-info">
+                <p>Name: Khushal Navle | Student ID: 123456</p>
+            </div>
+            <div class="image-container">
+                <div class="ad-frame visible" id="image1">
+                    <img src="Assets/ad1.jpg" alt="Train Scenic Plus" class="ad-image active">
+                    <p class="ad-text">Experience Scenic Plus</p>
+                </div>
+                <div class="ad-frame" id="image2">
+                    <img src="Assets/ad2.jpg" alt="Train Nature" class="ad-image">
+                    <p class="ad-text">A Feast of Scenery and Regionally Inspired Dishes</p>
+                </div>
+                <div class="ad-frame" id="image3">
+                    <img src="Assets/ad3.jpg" alt="Senior Couple" class="ad-image">
+                    <p class="ad-text">BOOK YOUR SEAT NOW</p>
+                </div>
+            </div>
+            <div class="footer-content">
+                <p class="footer-text">SCENIC DAY TRIPS | SHORT BREAK PACKAGES | GUIDED TOURS</p>
+                <div class="replay-button-container">
+                    <button id="replay-button" alt="Replay"><i class="fa fa-replay"></i></button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Parakai Springs. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

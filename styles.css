@@ -1,0 +1,383 @@
+/* ===========================
+   General Styles
+=========================== */
+
+/* Reset and Base Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.dropbtn i.fa-caret-down {
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li a i {
+    margin-right: 5px;
+}
+
+/* ===========================
+   Banner Styles
+=========================== */
+
+/* Keyframes for slide in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideInFromLeft {
+    animation: slideIn 2s forwards;
+}
+
+/* Keyframes for zooming in and out */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ZoomInOut Animation Class */
+.zoomInOut {
+    animation: zoomInOut 5s ease-in-out infinite;
+}
+
+.banner {
+    width: 80%; /* Adjust as needed */
+    height: 35vh;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.banner .banner-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 2s ease-in-out;
+}
+
+/* Active Banner Image */
+.banner .image.active {
+    opacity: 1;
+    /* slideInFromLeft class is managed via JavaScript */
+}
+
+/* Apply the zoomInOut animation to the second banner image when active */
+.banner .image:nth-of-type(2).active {
+    animation: zoomInOut 5s ease-in-out infinite;
+}
+
+/* Text Styles within Banner Scenes */
+.text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    font-size: 28px;
+    transition: opacity 2s ease-in-out, font-size 2s ease-in-out, color 2s ease-in-out;
+}
+
+.frame1 {
+    color: #ff4757;
+    animation: textSlideIn 2.5s forwards;
+}
+
+.frame2 {
+    color: #1e90ff;
+    animation: textSlideRight 2s forwards;
+}
+
+.frame3 {
+    color: #2ed573;
+    animation: zoomInText 2s forwards;
+}
+
+@keyframes textSlideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textSlideRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomInText {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   Booking Form Styles
+=========================== */
+
+/* Hide all steps and summary by default */
+.booking-form .step,
+.booking-form .summary {
+    display: none;
+}
+
+/* Display the active step or summary */
+.booking-form .step.active,
+.booking-form .summary.active {
+    display: block;
+}
+
+/* Optional: Add transition for smooth visibility */
+.booking-form .step,
+.booking-form .summary {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Button Styles */
+.booking-form button {
+    padding: 10px 20px;
+    margin: 10px 5px 0 0;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.booking-form button:hover {
+    background-color: #45a049;
+}
+
+/* Differentiate Previous Buttons */
+.booking-form .prev-btn {
+    background-color: #555;
+}
+
+.booking-form .prev-btn:hover {
+    background-color: #333;
+}
+
+/* Submit and Reset Button Styles */
+.booking-form .submit-btn,
+.booking-form .reset-btn {
+    background-color: #4caf50;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .reset-btn:hover {
+    background-color: #45a049;
+}
+
+/* ===========================
+   Sidebar Advertisement Styles
+=========================== */
+
+/* Sidebar Container */
+.sidebar-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items within the sidebar */
+    margin-left: auto; /* Pushes sidebar to the right */
+    margin-right: 10px; /* Add some space from the right edge */
+}
+
+/* Sidebar Ad Styles */
+.sidebar-ad {
+    width: 100%;
+    max-width: 300px;
+    height: 600px; /* Adjust as needed */
+    position: relative;
+    border: 2px solid #000;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: -60px;
+    margin-left: 1100px;
+}
+
+.ad-frame {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.ad-frame.visible {
+    display: flex;
+    animation: slideInFromRight 1s forwards; /* Slide in animation */
+    opacity: 1; /* Ensure it's visible */
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0; /* Invisible */
+    }
+    100% {
+        transform: translateX(0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Text Animation for Sidebar */
+.ad-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: black;
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s forwards; /* Fade-in effect */
+    animation-delay: 0.5s; /* Delay for a smooth effect */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Sidebar Ad Images */
+.sidebar-ad .ad-image {
+    display: none; /* Hide all images initially */
+}
+
+.sidebar-ad .ad-image.active {
+    display: block; /* Show the active image */
+}
+
+/* ===========================
+   Footer Styles
+=========================== */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
